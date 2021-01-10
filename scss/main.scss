@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: relative;
+    font-family: cursive;
+    header {
+        background-color: rgb(51, 134, 182);
+        height: 50vh;
+        width: 100vw;
+        background-size: cover;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            color: white;
+            font-weight: bold;
+            font-size: 3vmax;
+        }
+    }
+
+    .input-form {
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input,
+        button {
+            width: 50vh;
+            height: 5vh;
+            text-align: center;
+            color: white;
+            border: none;
+            outline-color: rgba($color: #3c8aa1, $alpha: 1);
+            background-color: rgba($color: #000000, $alpha: 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 5px;
+            &::placeholder {
+                color: white;
+            }
+        }
+
+        button {
+            margin-left: 1rem;
+            width: 10vh;
+            background-color: rgb(223, 174, 84);
+        }
+    }
+
+    .result {
+        display: flex;
+        height: 50vh;
+        width: 100%;
+        z-index: -1;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-25px);
+        opacity: 0;
+        position: absolute;
+        flex-direction: column;
+
+        h2 {
+            font-size: 4em;
+        }
+    }
+
+    .to-bottom {
+        transform: translateY(0);
+        opacity: 1;
+        transition: .5s;
+    }
+
+    @media (max-width: 768px) {
+        header {
+            h1 {
+                font-size: 2em;
+                text-align: center;
+                color: rgb(255, 255, 255);
+                text-shadow: 1px 1px rgba($color: #ffffff, $alpha: 1);
+            }
+        }
+    }
+
+    @media (max-width: 425px) {
+        .input-form {
+            flex-direction: row;
+            input {
+                width: 50vw;
+            }
+            button {
+                margin-top: 0;
+            }
+        }
+    }
+}
